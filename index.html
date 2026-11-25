@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,528 +7,887 @@
 <title>Two Roads To Freedom</title>
 
 <style>
-:root {
-  --ink: #202923;
-  --muted: #667168;
-  --paper: #f3f0e7;
-  --panel: #fbfaf6;
-  --line: #d7d3c7;
-  --green: #344b40;
-  --gold: #a47c3e;
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
-}
-
+/* ===== GENERAL STYLING ===== */
 * {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  color: var(--ink);
-  background: var(--paper);
-  font-family: var(--sans);
-  line-height: 1.6;
-}
-
-.top-rule {
-  height: 7px;
-  background: var(--green);
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f5f0e6;
+    color: #28251f;
+    line-height: 1.7;
 }
 
 header {
-  max-width: 1120px;
-  margin: auto;
-  padding: 28px 34px 18px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+    background: linear-gradient(135deg, #172b3a, #31566a);
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
 }
 
-.museum-mark {
-  color: var(--green);
-  font-size: .75rem;
-  font-weight: bold;
-  letter-spacing: .17em;
-  text-transform: uppercase;
+header h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin: 0;
+    letter-spacing: 2px;
 }
 
-.issue {
-  color: var(--muted);
-  font-size: .72rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+header p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 15px auto 0;
+}
+
+nav {
+    background: #172b3a;
+    padding: 14px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 10px #0003;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 13px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    background: #c49a55;
+    color: #172b3a;
 }
 
 main {
-  max-width: 1120px;
-  margin: auto;
-  padding: 0 34px 70px;
+    max-width: 1050px;
+    margin: auto;
+    padding: 25px 20px 60px;
 }
 
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 440px;
-  padding: clamp(42px, 8vw, 88px);
-  background: var(--green);
-  color: #f8f5ec;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  right: -105px;
-  bottom: -205px;
-  border: 1px solid rgba(236,226,200,.28);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 34px rgba(236,226,200,.035),
-    0 0 0 72px rgba(236,226,200,.035);
-  pointer-events: none;
-}
-
-.eyebrow {
-  margin: 0 0 18px;
-  color: #d8bd8b;
-  font-size: .75rem;
-  font-weight: bold;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
-
-h1 {
-  max-width: 760px;
-  margin: 0;
-  font: 400 clamp(3rem, 8vw, 6.3rem)/.98 var(--serif);
-  letter-spacing: -.045em;
-}
-
-.hero-line {
-  width: 74px;
-  height: 2px;
-  margin: 30px 0 22px;
-  background: #c6a46b;
-}
-
-.intro {
-  max-width: 690px;
-  margin: 0;
-  color: #e9e7de;
-  font: 400 clamp(1.05rem, 2vw, 1.28rem)/1.65 var(--serif);
-}
-
-.intro strong {
-  color: white;
-  font-weight: 400;
-}
-
-.context {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 34px;
-  padding: 34px 0 40px;
-  border-bottom: 1px solid var(--line);
-}
-
-.context-label {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--gold);
-  font-size: .7rem;
-  font-weight: bold;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
-.context p {
-  margin: 0;
-  color: #4e5a51;
-  font-size: .92rem;
-}
-
-.section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 20px;
-  margin: 43px 0 20px;
+section {
+    padding: 55px 0;
+    border-bottom: 2px solid #d8cbb6;
+    scroll-margin-top: 80px;
 }
 
 h2 {
-  margin: 0;
-  font: 400 2rem/1.1 var(--serif);
+    color: #23465a;
+    font-size: 2.2rem;
+    border-bottom: 3px solid #c49a55;
+    padding-bottom: 10px;
 }
 
-.section-note {
-  color: var(--muted);
-  font-size: .78rem;
+h3 {
+    color: #76552d;
+    margin-top: 28px;
 }
 
-.menu {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+p {
+    font-size: 1.08rem;
 }
 
-.menu a {
-  min-height: 145px;
-  padding: 21px 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: var(--ink);
-  background: var(--panel);
-  border: 1px solid var(--line);
-  text-decoration: none;
-  transition: .18s ease;
+.intro {
+    font-size: 1.25rem;
+    text-align: center;
+    max-width: 850px;
+    margin: 25px auto;
 }
 
-.menu a:hover,
-.menu a:focus-visible {
-  background: #fffdf8;
-  border-color: var(--gold);
-  transform: translateY(-2px);
-  outline: none;
+.quote {
+    background: #e9dfce;
+    border-left: 5px solid #c49a55;
+    padding: 18px 22px;
+    margin: 25px 0;
+    font-style: italic;
 }
 
-.number {
-  color: var(--gold);
-  font-size: .72rem;
-  letter-spacing: .12em;
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
 }
 
-.menu-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  font: 400 1.28rem/1.2 var(--serif);
+.card {
+    background: #fffaf1;
+    border: 1px solid #ded1bc;
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 3px 9px #0000000c;
 }
 
-.arrow {
-  color: var(--gold);
-  font: 1.2rem var(--sans);
+.card h3 {
+    margin-top: 0;
 }
 
-.section-destinations {
-  margin-top: 55px;
-  border-top: 1px solid var(--line);
+.highlight {
+    background: #e4ebeb;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
 }
 
-.destination {
-  padding: 30px 0;
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 28px;
-  border-bottom: 1px solid var(--line);
-  scroll-margin-top: 24px;
+.timeline {
+    border-left: 4px solid #c49a55;
+    padding-left: 25px;
+    margin: 25px 0;
 }
 
-.destination-index {
-  color: var(--gold);
-  font-size: .72rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
+.timeline-item {
+    margin-bottom: 25px;
 }
 
-.destination h3 {
-  margin: 0 0 7px;
-  font: 400 1.55rem var(--serif);
+.timeline-item strong {
+    color: #23465a;
 }
 
-.destination p {
-  margin: 0;
-  max-width: 650px;
-  color: var(--muted);
-  font-size: .9rem;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #fffaf1;
+}
+
+th, td {
+    border: 1px solid #d8cbb6;
+    padding: 13px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #23465a;
+    color: white;
+}
+
+button {
+    background: #23465a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 8px 5px 8px 0;
+}
+
+button:hover {
+    background: #c49a55;
+    color: #172b3a;
+}
+
+.quiz-question {
+    background: #fffaf1;
+    padding: 20px;
+    margin: 18px 0;
+    border-radius: 8px;
+    border: 1px solid #ded1bc;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+#quiz-result {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+a {
+    color: #235b78;
 }
 
 footer {
-  max-width: 1120px;
-  margin: auto;
-  padding: 22px 34px 34px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-  font-size: .72rem;
-  letter-spacing: .04em;
+    background: #172b3a;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
 }
 
-@media (max-width: 720px) {
-  header, main, footer {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  header {
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .hero {
-    min-height: 400px;
-    padding: 38px 28px;
-  }
-
-  .context {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .menu {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .destination {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 5px;
-  }
+footer a {
+    color: #e9c98f;
 }
 
-@media (max-width: 430px) {
-  .menu {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 600px) {
+    nav {
+        position: static;
+    }
 
-  .menu a {
-    min-height: 112px;
-  }
+    nav a {
+        font-size: 0.85rem;
+    }
 
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .menu a {
-    transition: none;
-  }
+    th, td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="top-rule"></div>
-
 <header>
-  <div class="museum-mark">
-    A Study in History & Memory
-  </div>
-  <div class="issue">
-    An Illustrated History Project · 01
-  </div>
+    <h1>Two Roads To Freedom</h1>
+    <p>
+        Comparing the Biblical Exodus from Egypt with the American
+        Revolution through history, leadership, sacrifice, and the
+        struggle for freedom.
+    </p>
 </header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#background">Background</a>
+    <a href="#leaders">Leaders</a>
+    <a href="#crossings">Crossings</a>
+    <a href="#journeys">Journeys</a>
+    <a href="#comparison">Comparison</a>
+    <a href="#conclusion">Conclusion</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#sources">Sources</a>
+</nav>
 
 <main>
 
-<section class="hero">
-  <p class="eyebrow">
-    Two Histories · One Enduring Question
-  </p>
+<!-- ===== HOME ===== -->
+<section id="home">
+    <h2>Welcome: Two Roads to Freedom</h2>
 
-  <h1>
-    Two Roads<br>
-    To Freedom
-  </h1>
-
-  <div class="hero-line"></div>
-
-  <p class="intro">
-    Two peoples walked out of bondage—one crossed a sea,
-    the other crossed a river in a storm. This exhibit compares
-    the Exodus from Egypt with the American struggle for
-    independence, drawing on David McCullough’s
-    <em>1776</em> to explore leadership, danger, endurance,
-    and the meaning of freedom.
-  </p>
-</section>
-
-<section class="context">
-
-  <div>
-    <span class="context-label">The Question</span>
-    <p>
-      What does it take for a people to seek freedom—and
-      what happens after the crossing?
+    <p class="intro">
+        Throughout history, people have struggled for freedom.
+        Some have fought to escape oppression, while others have
+        fought to establish independence and create a new future.
+        Two famous examples are the Biblical Exodus from Egypt and
+        the American Revolution.
     </p>
-  </div>
 
-  <div>
-    <span class="context-label">A Note on Comparison</span>
+    <div class="card-grid">
+        <div class="card">
+            <h3>The Exodus</h3>
+            <p>
+                In the biblical story, Moses leads the Israelites out
+                of slavery in Egypt. Their journey becomes a story
+                about faith, courage, leadership, and freedom.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>The American Revolution</h3>
+            <p>
+                During the American Revolution, the thirteen colonies
+                fought against British rule. Their struggle eventually
+                led to the creation of the United States.
+            </p>
+        </div>
+    </div>
+
+    <div class="quote">
+        Both stories explore the desire to live freely, the challenges
+        of leadership, and the sacrifices people make when seeking
+        a different future.
+    </div>
+
     <p>
-      These events belong to very different times and
-      circumstances. The parallels are a way to ask
-      questions, not to claim that the histories are the same.
+        This website examines the two stories side by side. It also
+        considers an important difference: the Exodus is a biblical
+        narrative, while the American Revolution is a historical event
+        documented through letters, records, newspapers, and other
+        historical evidence.
     </p>
-  </div>
-
 </section>
 
-<section>
+<!-- ===== BACKGROUND ===== -->
+<section id="background">
+    <h2>1. Historical Background</h2>
 
-  <div class="section-heading">
-    <h2>Explore the Exhibit</h2>
-    <span class="section-note">
-      Select a chapter to begin
-    </span>
-  </div>
+    <h3>The Biblical Exodus</h3>
 
-  <nav class="menu">
+    <p>
+        The Book of Exodus tells the story of the Israelites living
+        in Egypt under Pharaoh's rule. According to the biblical
+        account, the Israelites were enslaved and forced to work.
+        Their growing population worried Pharaoh, who made their
+        lives increasingly difficult.
+    </p>
 
-    <a href="#leaders">
-      <span class="number">01 / PEOPLE</span>
-      <span class="menu-title">
-        The Leaders <span class="arrow">↗</span>
-      </span>
-    </a>
+    <p>
+        Moses, who had been raised in Pharaoh's household before
+        leaving Egypt, was called by God to return and demand that
+        Pharaoh release the Israelites. Moses became the central
+        leader of their escape.
+    </p>
 
-    <a href="#crossing">
-      <span class="number">02 / TURNING POINT</span>
-      <span class="menu-title">
-        The Crossing <span class="arrow">↗</span>
-      </span>
-    </a>
+    <p>
+        The story describes a series of ten plagues that affected
+        Egypt. After the final plague, Pharaoh allowed the Israelites
+        to leave. However, he later changed his mind and pursued them.
+    </p>
 
-    <a href="#journey">
-      <span class="number">03 / AFTERWARD</span>
-      <span class="menu-title">
-        The Long Journey <span class="arrow">↗</span>
-      </span>
-    </a>
+    <h3>The American Revolution</h3>
 
-    <a href="#comparison">
-      <span class="number">04 / PERSPECTIVE</span>
-      <span class="menu-title">
-        Where the Comparison Breaks <span class="arrow">↗</span>
-      </span>
-    </a>
+    <p>
+        The American Revolution developed from growing disagreements
+        between Great Britain and its thirteen North American colonies.
+        Many colonists objected to British taxes and policies,
+        especially because they had limited representation in
+        Parliament.
+    </p>
 
-    <a href="#game">
-      <span class="number">05 / INTERACTIVE</span>
-      <span class="menu-title">
-        The Game <span class="arrow">↗</span>
-      </span>
-    </a>
+    <p>
+        Tensions increased after events such as the Stamp Act,
+        the Boston Massacre, and the Boston Tea Party. Fighting
+        began at Lexington and Concord in April 1775.
+    </p>
 
-    <a href="#sources">
-      <span class="number">06 / RESEARCH</span>
-      <span class="menu-title">
-        Sources <span class="arrow">↗</span>
-      </span>
-    </a>
+    <p>
+        In July 1776, the Continental Congress adopted the Declaration
+        of Independence. The colonies announced that they considered
+        themselves independent states, although the war continued
+        for several more years.
+    </p>
 
-  </nav>
+    <div class="timeline">
+        <div class="timeline-item">
+            <strong>1775:</strong>
+            Fighting begins at Lexington and Concord.
+        </div>
+        <div class="timeline-item">
+            <strong>1776:</strong>
+            The Declaration of Independence is adopted.
+        </div>
+        <div class="timeline-item">
+            <strong>1776:</strong>
+            Washington crosses the Delaware River and wins at Trenton.
+        </div>
+        <div class="timeline-item">
+            <strong>1781:</strong>
+            The British surrender at Yorktown.
+        </div>
+        <div class="timeline-item">
+            <strong>1783:</strong>
+            The Treaty of Paris formally recognizes American independence.
+        </div>
+    </div>
+
+    <div class="highlight">
+        <strong>Important distinction:</strong>
+        The Exodus story and the American Revolution belong to very
+        different historical and literary contexts. This project
+        compares their themes without claiming they are the same event.
+    </div>
 </section>
 
-<section class="section-destinations">
+<!-- ===== LEADERS ===== -->
+<section id="leaders">
+    <h2>2. Leaders of Freedom</h2>
 
-  <article class="destination" id="leaders">
-    <div class="destination-index">Chapter 01</div>
-    <div>
-      <h3>The Leaders</h3>
-      <p>
-        Meet the figures whose decisions shaped each
-        people's path: Moses in the Exodus story, and
-        George Washington during the American Revolution.
-      </p>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Moses</h3>
+            <p>
+                Moses is the central human leader in the biblical
+                Exodus narrative. He confronts Pharaoh, communicates
+                God's demands, and guides the Israelites out of Egypt.
+            </p>
+            <p>
+                His leadership requires patience and determination.
+                The Israelites sometimes doubt him, and the journey
+                becomes difficult even after they escape Egypt.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>George Washington</h3>
+            <p>
+                George Washington served as commander in chief of the
+                Continental Army during the American Revolution.
+                He faced shortages of supplies, difficult weather,
+                limited training, and a powerful British military.
+            </p>
+            <p>
+                His leadership helped keep the Continental Army
+                together through several difficult periods of war.
+            </p>
+        </div>
     </div>
-  </article>
 
-  <article class="destination" id="crossing">
-    <div class="destination-index">Chapter 02</div>
-    <div>
-      <h3>The Crossing</h3>
-      <p>
-        Consider two dramatic passages: the crossing of
-        the sea in the Exodus narrative and Washington's
-        daring Delaware River crossing in December 1776.
-      </p>
+    <h3>Different Types of Leadership</h3>
+
+    <p>
+        Moses is presented in the Bible as a leader chosen by God.
+        His role is connected to faith, religious responsibility,
+        and guiding a people toward freedom.
+    </p>
+
+    <p>
+        Washington's leadership was military and political. He had
+        to organize an army, work with Congress, cooperate with
+        other leaders, and make decisions during a long war.
+    </p>
+
+    <h3>What They Have in Common</h3>
+
+    <ul>
+        <li>Both led groups facing powerful opposition.</li>
+        <li>Both had to maintain hope during difficult moments.</li>
+        <li>Both faced uncertainty and pressure.</li>
+        <li>Both became important symbols of freedom and leadership.</li>
+    </ul>
+</section>
+
+<!-- ===== CROSSINGS ===== -->
+<section id="crossings">
+    <h2>3. Crossings: The Red Sea and the Delaware River</h2>
+
+    <h3>The Crossing of the Red Sea</h3>
+
+    <p>
+        In the Book of Exodus, the Israelites reach the Red Sea while
+        escaping Egypt. Pharaoh's army approaches, leaving the
+        Israelites frightened and apparently trapped.
+    </p>
+
+    <p>
+        According to the biblical narrative, God parts the waters
+        through Moses, allowing the Israelites to cross on dry land.
+        When the Egyptian army follows, the waters return.
+    </p>
+
+    <p>
+        This moment becomes one of the most famous scenes in the
+        Exodus story. It represents deliverance, faith, and the
+        possibility of freedom even when a situation seems hopeless.
+    </p>
+
+    <h3>Washington's Crossing of the Delaware</h3>
+
+    <p>
+        On the night of December 25–26, 1776, George Washington led
+        Continental Army troops across the icy Delaware River.
+        The army then marched toward Trenton, New Jersey.
+    </p>
+
+    <p>
+        The Americans attacked Hessian troops at Trenton on December
+        26 and won an important victory. The success helped restore
+        confidence in the Continental Army during a difficult period
+        of the Revolution.
+    </p>
+
+    <p>
+        David McCullough's book <em>1776</em> describes the challenges
+        facing Washington and the Continental Army during this
+        important year.
+    </p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Red Sea</h3>
+            <p>
+                A miraculous crossing in the biblical account that
+                allows the Israelites to escape Pharaoh's army.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Delaware River</h3>
+            <p>
+                A military crossing during the American Revolution
+                that leads to the American victory at Trenton.
+            </p>
+        </div>
     </div>
-  </article>
 
-  <article class="destination" id="journey">
-    <div class="destination-index">Chapter 03</div>
-    <div>
-      <h3>The Long Journey</h3>
-      <p>
-        Freedom was not the end of either story.
-        Explore the uncertainty, hardship, and difficult
-        work that followed.
-      </p>
+    <div class="highlight">
+        <strong>Connection:</strong>
+        Both crossings represent a turning point. Each story shows
+        people facing a dangerous and uncertain situation while
+        trying to reach freedom.
     </div>
-  </article>
+</section>
 
-  <article class="destination" id="comparison">
-    <div class="destination-index">Chapter 04</div>
-    <div>
-      <h3>Where the Comparison Breaks</h3>
-      <p>
-        Examine the important differences in time,
-        purpose, historical evidence, and the experiences
-        of the people involved.
-      </p>
+<!-- ===== JOURNEYS ===== -->
+<section id="journeys">
+    <h2>4. The Journeys After Freedom Begins</h2>
+
+    <h3>The Israelites in the Wilderness</h3>
+
+    <p>
+        Leaving Egypt did not mean that the Israelites immediately
+        reached a peaceful and easy life. The Book of Exodus describes
+        a long journey through the wilderness.
+    </p>
+
+    <p>
+        The Israelites experience hunger, thirst, uncertainty, and
+        disagreements. They sometimes question Moses and express
+        doubts about their future.
+    </p>
+
+    <p>
+        The biblical narrative describes God providing food and water
+        and giving the Israelites laws and instructions. Their journey
+        becomes about more than leaving Egypt: it is also about
+        developing a community and learning how to live together.
+    </p>
+
+    <h3>The American Army's Journey</h3>
+
+    <p>
+        The American victory at Trenton did not end the Revolutionary
+        War. Washington's army still faced difficult conditions,
+        including limited supplies, harsh winters, and disagreements
+        about how to conduct the war.
+    </p>
+
+    <p>
+        The army needed to remain organized and continue fighting.
+        The Americans also depended on support from the French,
+        whose alliance became an important part of the war effort.
+    </p>
+
+    <p>
+        The war eventually reached a major turning point at Yorktown
+        in 1781, where British forces under General Cornwallis
+        surrendered to American and French forces.
+    </p>
+
+    <h3>Why the Journey Matters</h3>
+
+    <p>
+        Both stories demonstrate that reaching a turning point does
+        not mean every challenge is over. Freedom can begin with one
+        major event, but building a stable future takes time,
+        responsibility, and cooperation.
+    </p>
+</section>
+
+<!-- ===== COMPARISON ===== -->
+<section id="comparison">
+    <h2>5. Comparing the Two Roads to Freedom</h2>
+
+    <p>
+        The Exodus and the American Revolution share important themes,
+        but they also have major differences. The following chart
+        highlights their similarities and distinctions.
+    </p>
+
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>The Exodus</th>
+            <th>The American Revolution</th>
+        </tr>
+        <tr>
+            <td>Opposition</td>
+            <td>Pharaoh and Egyptian rule</td>
+            <td>British government and military rule</td>
+        </tr>
+        <tr>
+            <td>Main leader</td>
+            <td>Moses</td>
+            <td>George Washington</td>
+        </tr>
+        <tr>
+            <td>Goal</td>
+            <td>Escape slavery and leave Egypt</td>
+            <td>Gain political independence from Britain</td>
+        </tr>
+        <tr>
+            <td>Important crossing</td>
+            <td>The Red Sea</td>
+            <td>The Delaware River</td>
+        </tr>
+        <tr>
+            <td>Major challenge</td>
+            <td>Surviving the wilderness journey</td>
+            <td>Maintaining an army during a long war</td>
+        </tr>
+        <tr>
+            <td>Outcome</td>
+            <td>The Israelites leave Egypt and continue toward the promised land</td>
+            <td>The United States gains independence</td>
+        </tr>
+        <tr>
+            <td>Type of source</td>
+            <td>Biblical narrative</td>
+            <td>Historical documents and accounts</td>
+        </tr>
+    </table>
+
+    <h3>Major Similarities</h3>
+
+    <ul>
+        <li>Both involve people seeking freedom from a powerful authority.</li>
+        <li>Both feature leaders who must guide others through uncertainty.</li>
+        <li>Both include difficult journeys and major turning points.</li>
+        <li>Both became important stories about freedom and identity.</li>
+        <li>Both show that freedom can involve sacrifice and responsibility.</li>
+    </ul>
+
+    <h3>Major Differences</h3>
+
+    <ul>
+        <li>
+            The Exodus is a religious narrative centered on God's
+            deliverance of the Israelites.
+        </li>
+        <li>
+            The American Revolution was a political and military
+            conflict between Britain and its thirteen colonies.
+        </li>
+        <li>
+            The Exodus describes a people escaping slavery, while
+            the American Revolution sought independence from British
+            political control.
+        </li>
+        <li>
+            American independence did not end slavery in the United
+            States. Slavery continued for generations after the
+            Revolution and was abolished nationally only after
+            the Civil War.
+        </li>
+    </ul>
+
+    <div class="highlight">
+        <strong>One important lesson:</strong>
+        The word "freedom" can mean different things in different
+        situations. Political independence, freedom from slavery,
+        religious freedom, and equal rights are connected ideas,
+        but they are not identical.
     </div>
-  </article>
+</section>
 
-  <article class="destination" id="game">
-    <div class="destination-index">Chapter 05</div>
-    <div>
-      <h3>The Game</h3>
-      <p>
-        Test what you have learned about the people,
-        places, and turning points in both histories.
-      </p>
+<!-- ===== CONCLUSION ===== -->
+<section id="conclusion">
+    <h2>6. Conclusion: What Freedom Means</h2>
+
+    <p>
+        The Biblical Exodus and the American Revolution tell two
+        different stories about the struggle for freedom. One is
+        a religious narrative about the Israelites escaping slavery
+        in Egypt. The other is a historical revolution in which
+        thirteen colonies fought for independence from Great Britain.
+    </p>
+
+    <p>
+        Moses and George Washington were very different leaders,
+        but both stories show how leadership can influence people
+        during uncertain times. The Red Sea and Delaware crossings
+        also represent moments when the future of a group seemed
+        uncertain.
+    </p>
+
+    <p>
+        The most important lesson is that freedom is not simply
+        reaching a destination or winning a battle. It also involves
+        building a community, making difficult choices, and deciding
+        how people should treat one another.
+    </p>
+
+    <div class="quote">
+        Two different roads. Two different histories. One important
+        question: What does it truly mean to be free?
     </div>
-  </article>
+</section>
 
-  <article class="destination" id="sources">
-    <div class="destination-index">Chapter 06</div>
-    <div>
-      <h3>Sources</h3>
-      <p>
-        Find the books and historical references used
-        to build this exhibit, including David McCullough's
-        <em>1776</em>.
-      </p>
+<!-- ===== QUIZ ===== -->
+<section id="quiz">
+    <h2>7. Test Your Knowledge</h2>
+
+    <p>
+        Take this short quiz to see how much you learned about
+        the Exodus and the American Revolution.
+    </p>
+
+    <form id="quiz-form">
+
+        <div class="quiz-question">
+            <h3>Question 1: Who led the Israelites out of Egypt?</h3>
+            <label><input type="radio" name="q1" value="a"> George Washington</label>
+            <label><input type="radio" name="q1" value="b"> Moses</label>
+            <label><input type="radio" name="q1" value="c"> Benjamin Franklin</label>
+        </div>
+
+        <div class="quiz-question">
+            <h3>Question 2: What river did Washington cross in December 1776?</h3>
+            <label><input type="radio" name="q2" value="a"> Mississippi River</label>
+            <label><input type="radio" name="q2" value="b"> Red River</label>
+            <label><input type="radio" name="q2" value="c"> Delaware River</label>
+        </div>
+
+        <div class="quiz-question">
+            <h3>Question 3: What happened after Washington crossed the Delaware?</h3>
+            <label><input type="radio" name="q3" value="a"> The Americans won at Trenton</label>
+            <label><input type="radio" name="q3" value="b"> The war immediately ended</label>
+            <label><input type="radio" name="q3" value="c"> The colonies surrendered</label>
+        </div>
+
+        <div class="quiz-question">
+            <h3>Question 4: What happened after the Israelites left Egypt?</h3>
+            <label><input type="radio" name="q4" value="a"> They immediately settled in America</label>
+            <label><input type="radio" name="q4" value="b"> They traveled through the wilderness</label>
+            <label><input type="radio" name="q4" value="c"> They returned to Pharaoh</label>
+        </div>
+
+        <div class="quiz-question">
+            <h3>Question 5: Which statement is true?</h3>
+            <label><input type="radio" name="q5" value="a"> Both stories are exactly the same event</label>
+            <label><input type="radio" name="q5" value="b"> Both stories involve struggles for freedom, but they are different events</label>
+            <label><input type="radio" name="q5" value="c"> Neither story involves leadership</label>
+        </div>
+
+        <button type="submit">Submit Answers</button>
+        <button type="reset" onclick="document.getElementById('quiz-result').textContent = '';">
+            Try Again
+        </button>
+
+    </form>
+
+    <div id="quiz-result" aria-live="polite"></div>
+</section>
+
+<!-- ===== SOURCES ===== -->
+<section id="sources">
+    <h2>8. Sources and Further Reading</h2>
+
+    <p>
+        These sources can help readers learn more about the biblical
+        Exodus, the American Revolution, and the people involved.
+    </p>
+
+    <h3>Biblical Sources</h3>
+    <ul>
+        <li>
+            <a href="https://www.biblegateway.com/passage/?search=Exodus%201&version=NIV" target="_blank" rel="noopener">
+                Book of Exodus — Bible Gateway
+            </a>
+            — The biblical account of the Israelites in Egypt and
+            their journey out of slavery.
+        </li>
+    </ul>
+
+    <h3>American Revolution Sources</h3>
+    <ul>
+        <li>
+            <a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" rel="noopener">
+                The Declaration of Independence — National Archives
+            </a>
+            — The text of the Declaration adopted in 1776.
+        </li>
+
+        <li>
+            <a href="https://www.nps.gov/inde/learn/historyculture/stories.htm" target="_blank" rel="noopener">
+                Independence National Historical Park — National Park Service
+            </a>
+            — Historical information about American independence.
+        </li>
+
+        <li>
+            <a href="https://www.mountvernon.org/george-washington" target="_blank" rel="noopener">
+                George Washington's Life — Mount Vernon
+            </a>
+            — Information about Washington's life and leadership.
+        </li>
+
+        <li>
+            <a href="https://www.loc.gov/" target="_blank" rel="noopener">
+                Library of Congress
+            </a>
+            — Historical collections and primary sources.
+        </li>
+    </ul>
+
+    <h3>Book</h3>
+    <ul>
+        <li>
+            David McCullough, <em>1776</em>.
+            A historical account of the early years of the American
+            Revolution, including Washington's leadership and the
+            Delaware crossing.
+        </li>
+    </ul>
+
+    <div class="highlight">
+        <strong>Research note:</strong>
+        The Exodus section describes what the biblical text says.
+        The American Revolution section uses historical events and
+        documentary sources. Readers should keep those different
+        kinds of evidence in mind when comparing the stories.
     </div>
-  </article>
-
 </section>
 
 </main>
 
 <footer>
-  <span>TWO ROADS TO FREEDOM</span>
-  <span>A Historical Comparison · School Project</span>
+    <h2 style="color:white; border:none;">Two Roads To Freedom</h2>
+    <p>A comparison of the Biblical Exodus and the American Revolution.</p>
+    <p>Created for an educational history project.</p>
+    <p><a href="#home">Back to the top ↑</a></p>
 </footer>
+
+<script>
+// ===== QUIZ FUNCTION =====
+document.getElementById("quiz-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const answers = {
+        q1: "b",
+        q2: "c",
+        q3: "a",
+        q4: "b",
+        q5: "b"
+    };
+
+    let score = 0;
+    let unanswered = 0;
+
+    for (const question in answers) {
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (!selected) {
+            unanswered++;
+        } else if (selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    const result = document.getElementById("quiz-result");
+
+    if (unanswered > 0) {
+        result.textContent =
+            "Please answer all " + Object.keys(answers).length +
+            " questions before submitting.";
+        return;
+    }
+
+    let message = "You scored " + score + " out of 5! ";
+
+    if (score === 5) {
+        message += "Excellent work! You know the material very well.";
+    } else if (score >= 3) {
+        message += "Good job! Review the sections above to learn even more.";
+    } else {
+        message += "Keep studying! Read through the sections and try again.";
+    }
+
+    result.textContent = message;
+});
+</script>
 
 </body>
 </html>
-two-roads-to-freedom/
-│
-├── index.html
-├── leaders.html
-├──
